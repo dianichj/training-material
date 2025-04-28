@@ -128,11 +128,12 @@ Before we dive into the analysis, lets inspect our `AnnData file` with tools in 
 >    > 2. What other information can be retrive by the `Inspect AnnData` tool? 
 >    >
 >    > > <solution-title></solution-title>
->    > > 1. There are 9,118 observations, representing cells, and 18,926 variables, representing genes expressed in total.
->    > >     ```
->    > >     [n_obs x n_vars]
->    > >     -    9118 × 18926
->    > >     ```
+>    > > 1.  
+>    > > ```
+>    > > [n_obs x n_vars]
+>    > > 9118 × 18926
+>    > > ```
+>    > > There are 9,118 observations, representing cells, and 18,926 variables, representing genes expressed in total.
 >    > > 2. When selecting **General Inspection**, you can view the labels for all entries in `[obs]`, `[var]`, `[obsm]`, `[varm]`, and `[uns]`. This includes the labels described above within the observation field, such as `annotated`, `condition`, `batch`, and `tissue`, which will be needed as inputs for the pseudobulk tool.
 >    > > To view more specific details in the AnnData object, select a different parameter under *"What to inspect?"*.
 >    > {: .solution}
