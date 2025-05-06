@@ -43,7 +43,7 @@ tags:
 - pseudobulk
 answer_histories:
 - label: UseGalaxy.eu
-  history: https://usegalaxy.eu/u/dianitachj24/h/pseudo-bulk-edger-11-04-2025
+  history: https://usegalaxy.eu/u/dianitachj24/h/2025-05-02-pseudobulktutorialmanualsteps
   date: 2025-04-11
 - label: UseGalaxy.eu
   history: https://usegalaxy.eu/u/dianitachj24/h/pseudo-bulk-edger-pdcs-11-04-2025
@@ -302,11 +302,7 @@ This file will be used as the contrast input file in the edgeR tool.
 >    - {% icon param-file %} *"File to process"*: `Samples Metadata` (output generated from the **Replace Text** {% icon tool %} step).
 >    - *"AWK Program"*:
 >      ```awk
->      BEGIN { print header }
->      NR > 1 { if (!seen[$2]++) words[++count]=$2 }
->      END { for (i=1; i<=count; i++)
->               for (j=i+1; j<=count; j++)
->                  print words[i]-words[j] }
+>      BEGIN { print "header" } NR > 1 { if (!seen[$2]++) words[++count]=$2 } END { for (i=1; i<=count; i++) for (j=i+1; j<=count; j++) print words[i]"-"words[j] }
 >      ```
 >
 > Rename to **Contrast File** 
@@ -318,6 +314,7 @@ This file will be used as the contrast input file in the edgeR tool.
 >    > - Processes the input file (`NR > 1` skips the header line).
 >    > - Tracks unique elements in column 2 (`seen[$2]++`) to avoid duplicates.
 >    > - Creates pairs of unique elements and calculates their difference, outputting the contrast for downstream edgeR analysis.
+>    > - **Important!** When using the *"Text reformatting with awk"* tool, make sure the code is written all in one line, without any line breaks. Otherwise, it won’t work as expected.
 >    {: .comment}
 >
 {: .hands_on}
