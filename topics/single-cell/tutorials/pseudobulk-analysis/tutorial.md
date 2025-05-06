@@ -43,7 +43,7 @@ tags:
 - pseudobulk
 answer_histories:
 - label: UseGalaxy.eu
-  history: https://usegalaxy.eu/u/dianitachj24/h/2025-05-02-pseudobulktutorialmanualsteps
+  history: https://usegalaxy.eu/u/dianitachj24/h/pseudobulk-tutorial-workflow
   date: 2025-04-11
 - label: UseGalaxy.eu
   history: https://usegalaxy.eu/u/dianitachj24/h/pseudo-bulk-edger-pdcs-11-04-2025
@@ -67,7 +67,6 @@ recordings:
   captioners:
   - dianichj
   bot-timestamp: 1746186506
-
 
 ---
 
