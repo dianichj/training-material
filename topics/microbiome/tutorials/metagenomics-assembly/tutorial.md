@@ -50,7 +50,7 @@ recordings:
   captioners:
   - bebatut
   - sophia120199
-- youtube_id: TODO
+- youtube_id: https://youtu.be/KzqLR4btsic
   length: 1H15M
   galaxy_version: 25.1.2.dev0
   date: '2026-03-26'
