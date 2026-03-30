@@ -50,14 +50,15 @@ recordings:
   captioners:
   - bebatut
   - sophia120199
-- youtube_id: https://youtu.be/KzqLR4btsic
+- youtube_id: KzqLR4btsic
   length: 1H15M
   galaxy_version: 25.1.2.dev0
   date: '2026-03-26'
   speakers:
+    - gdefazio
   captioners:
-  bot-timestamp: 1774536170
-
+    - gdefazio
+    - natalie-wa
 
 ---
 
