@@ -176,7 +176,7 @@ program:
 
   - section: "Friday: Grab bag"
     description: |
-      Can't get enough? Explore another track or discover out Digital Humanities short track. You can also explore the rest of the Galaxy Training Network material. The trainers will still be present on Slack for you if you have a problem and answer questions. However, they may not be experts in the topic you selected.
+      Can't get enough? You can explore the rest of the Galaxy Training Network material. The trainers will still be present on Slack for you if you have a problem and answer questions. However, they may not be experts in the topic you selected.
 
       **Need help with these tutorials?** Ask your questions via the Slack Channel (TBD).
 
@@ -193,7 +193,7 @@ We provide you with training materials which you can study at your own pace and 
 
 <button id="program-button" class="btn btn-info" onclick="$('#program-tab').tab('show');">Program</button>
 
-On the first day, you can make yourself familiar with the Galaxy platform. In the next days, you can learn about Proteomics, Assembly, Transcriptomics, Single Cell, Microbiome or Machine Learning data analysis in Galaxy. On the last day, the Friday we additionally offer a ***Digital Humanities*** program to you.
+On the first day, you can make yourself familiar with the Galaxy platform. In the next days, you can learn about Proteomics, Assembly, Transcriptomics, Single Cell, Microbiome or Machine Learning data analysis in Galaxy.
 
 
 **Course format**

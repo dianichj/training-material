@@ -733,6 +733,8 @@ name:
   dev/architecture-tests/slides: "/topics/dev/tutorials/architecture-tests/slides.html"
   imaging/dicom-anatomical-3d: "/topics/imaging/tutorials/dicom-anatomical-3d/tutorial.html"
   introduction/galaxy-intro-rdm: "/topics/introduction/tutorials/galaxy-intro-rdm/tutorial.html"
+  statistics/multimodal_learner: "/topics/statistics/tutorials/multimodal_learner/tutorial.html"
+  statistics/multimodal_learner/slides: "/topics/statistics/tutorials/multimodal_learner/slides.html"
 id:
   T00000: "/topics/admin/tutorials/ansible/tutorial.html"
   T00001: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
@@ -2563,6 +2565,9 @@ id:
   F00509: "/faqs/galaxy/interactive_tools_stop.html"
   F00510: "/faqs/galaxy/workflows_share.html"
   W00377: "/topics/introduction/tutorials/galaxy-intro-rdm/workflows/Olympic-Age-Distribution.html"
+  T00576: "/topics/statistics/tutorials/multimodal_learner/tutorial.html"
+  S00157: "/topics/statistics/tutorials/multimodal_learner/slides.html"
+  W00378: "/topics/statistics/tutorials/multimodal_learner/workflows/main_workflow.html"
 misc:
   ansible-galaxy: "/topics/admin/tutorials/ansible-galaxy/tutorial.html"
   feeds: "/feeds/index.html"
