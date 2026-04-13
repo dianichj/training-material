@@ -1705,6 +1705,11 @@ In the next steps, we are mostly interested in the marker genes for each cluster
 
 Obtaining clusters of cells is quite straightforward. Determining what biological state is represented by each of those clusters is likely the most challenging task in scRNA-Seq data analysis. To do so, we need to bridge the gap between our current dataset and prior biological knowledge.
 
+{% include _includes/cyoa-choices.html option1="Manual" option2="CellTypist" default="Manual"
+       text="There are two approaches for cell type annotation. Choose the one that suits you best!" %}
+
+<div class="Manual" markdown="1">
+
 This biological knowledge is not always available in a consistent and quantitative manner. For example, the concept of "cell type" is not clearly defined. The interpretation of scRNA-seq data is often then quite manual.
 
 Fortunately in the case of our dataset, we can use canonical markers to known cell types:
@@ -1901,6 +1906,58 @@ With the annotated cell types, we can also visualize the expression of their can
 > >
 > {: .solution}
 {: .question}
+
+</div>
+
+<div class="CellTypist" markdown="1">
+
+The automated approach uses CellTypist, a tool that applies pre-trained logistic classifiers to predict cell identities directly from the normalized expression data, without requiring prior knowledge of canonical marker genes.
+
+> <comment-title></comment-title>
+>
+> CellTypist requires a log1p-normalized expression matrix (normalized to 10,000 counts per cell), which is already stored in the `raw` attribute of our AnnData object from the preprocessing steps above.
+>
+{: .comment}
+
+> <hands-on-title>Automated cell type annotation with CellTypist (Train from AnnData)</hands-on-title>
+>
+> 1. {% tool [CellTypist](toolshed.g2.bx.psu.edu/repos/iuc/celltypist/celltypist/1.7.1+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Input AnnData file"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering, marker genes with Wilcoxon test, annotation`
+>    - *"Select model from"*: `History`
+>      - *"Select a models or train a model from history"*: `Train a model on an existing AnnData and use it`
+>        - {% icon param-file %} *"Select an AnnData file from history"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering, marker genes with Wilcoxon test, annotation`
+>        - *"The column name in the .obs attribute of the training AnnData file that contains the cell type labels"*: `louvain`
+>    - *"Refine the predicted labels by running the majority voting classifier after over-clustering"*: `Yes`
+>    - *"Annotation mode"*: `Choose the cell type with the largest score/probability as the final prediction`
+>    - *"Probability threshold"*: `0.5`
+>    - *"Generate a dotplot of the predicted cell types"*: `Yes`
+>      - *"Reference column in AnnData.obs for dotplot"*: `louvain`
+>      - *"Prediction label in AnnData.obs for dotplot"*: `predicted_labels`
+>      - *"Dotplot format"*: `png`
+>
+> 2. Rename the generated output `3k PBMC CellTypist annotated`
+>
+> 3. Inspect the dotplot output
+>
+>    ![CellTypist label transfer dotplot](../../images/scrna-scanpy-pbmc3k/celltypist_dotplot.png "CellTypist label transfer dotplot showing the predicted cell types against the Louvain clusters.")
+>
+{: .hands_on}
+
+> <hands-on-title>Automated cell type annotation with CellTypist (Cached model)</hands-on-title>
+>
+> 1. {% tool [CellTypist](toolshed.g2.bx.psu.edu/repos/iuc/celltypist/celltypist/1.7.1+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Input AnnData file"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering, marker genes with Wilcoxon test, annotation`
+>    - *"Select model from"*: `Cached`
+>      - *"Choose CellTypist model"*: `immune sub-populations combined from 20 tissues of 18 studies (v2)`
+>    - *"Refine the predicted labels by running the majority voting classifier after over-clustering"*: `Yes`
+>    - *"Annotation mode"*: `Choose the cell type with the largest score/probability as the final prediction`
+>    - *"Probability threshold"*: `0.5`
+>
+> 2. Rename the generated output `3k PBMC CellTypist annotated`
+>
+{: .hands_on}
+
+</div>
 
 # Conclusion
 {% icon congratulations %} Well done, you’ve made it to the end! In this tutorial, we investigated clustering and annotation of single-cell data from 10x Genomics using Scanpy. This workflow used here was typical for scRNA-seq data analysis:
