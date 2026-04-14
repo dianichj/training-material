@@ -1357,6 +1357,34 @@ The cells in the same clusters should be co-localized in the UMAP coordinate plo
 > {: .solution}
 {: .question}
 
+> <hands-on-title>Explore clusters interactively with Vitessce</hands-on-title>
+>
+> 1. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering`
+>    - *"Method used for plotting"*: `Embeddings: Scatter plot in UMAP basis, using 'pl.umap'`
+>      - *"Keys for annotations of observations/cells or variables/genes"*: `louvain`
+>      - *"Make an interactive plot?"*: `Yes`
+>
+> 2. Rename the `vitessce.json` output to `Vitessce config - clusters`
+>
+> 3. Click on the {% icon galaxy-eye %} (**View data**) icon of the `Vitessce config - clusters` dataset to explore the clusters interactively in Vitessce
+>
+>    ![Vitessce interactive visualization of Louvain clusters](../../images/scrna-scanpy-pbmc3k/vitessce_clusters.png "Vitessce showing the UMAP with the 8 Louvain clusters and Cell Sets panel.")
+>
+>    > <question-title></question-title>
+>    >
+>    > Explore the UMAP in Vitessce. Can you identify distinct groups of cells? How does this compare to the static plot above?
+>    >
+>    > > <solution-title></solution-title>
+>    > >
+>    > > Vitessce allows you to interactively explore the clusters by hovering over cells, selecting groups, and linking views. The 8 Louvain clusters should be clearly visible. This interactive view will be especially useful after cell type annotation, when we can compare the cluster labels with the predicted cell types.
+>    > >
+>    > {: .solution}
+>    >
+>    {: .question}
+>
+{: .hands_on}
+
 # Finding marker genes
 
 To give sense to the clusters, we need to identify the genes that drive separation between clusters. These marker genes can then be used to assign biological sense (e.g. cell type) to each cluster based on their functional annotation, but also to identify subtle differences between clusters (e.g., changes in activation or differentiation state) based on the behaviour of genes in the affected pathways.
@@ -1954,6 +1982,34 @@ The automated approach uses CellTypist, a tool that applies pre-trained logistic
 >    - *"Probability threshold"*: `0.5`
 >
 > 2. Rename the generated output `3k PBMC CellTypist annotated`
+>
+{: .hands_on}
+
+> <hands-on-title>Explore CellTypist annotations interactively with Vitessce</hands-on-title>
+>
+> 1. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
+>    - {% icon param-file %} *"Annotated data matrix"*: `3k PBMC CellTypist annotated`
+>    - *"Method used for plotting"*: `Embeddings: Scatter plot in UMAP basis, using 'pl.umap'`
+>      - *"Keys for annotations of observations/cells or variables/genes"*: `louvain`
+>      - *"Make an interactive plot?"*: `Yes`
+>
+> 2. Rename the `vitessce.json` output to `Vitessce config - CellTypist`
+>
+> 3. Click on the {% icon galaxy-eye %} (**View data**) icon of the `Vitessce config - CellTypist` dataset to explore the annotations interactively
+>
+>    ![Vitessce interactive visualization of CellTypist annotations](../../images/scrna-scanpy-pbmc3k/celltypist_vitessce.png "Vitessce showing the UMAP with CellTypist-annotated cell types and Cell Sets panel.")
+>
+>    > <question-title></question-title>
+>    >
+>    > Compare this Vitessce view with the one generated before cell type annotation. What has changed?
+>    >
+>    > > <solution-title></solution-title>
+>    > >
+>    > > The Cell Sets panel now shows the annotated cell type names (B, CD14+, CD4+ T, CD8+ T, Dendritic, FCGR3A+, Megakaryocytes, NK) with their cell counts, instead of the numbered Louvain clusters. This allows you to interactively explore the biological identity of each cell population.
+>    > >
+>    > {: .solution}
+>    >
+>    {: .question}
 >
 {: .hands_on}
 
