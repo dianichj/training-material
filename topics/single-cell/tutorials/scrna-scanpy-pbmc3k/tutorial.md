@@ -1953,7 +1953,7 @@ The automated approach uses CellTypist, a tool that applies pre-trained logistic
 >    - {% icon param-file %} *"Input AnnData file"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering, marker genes with Wilcoxon test, annotation`
 >    - *"Select model from"*: `History`
 >      - *"Select a models or train a model from history"*: `Train a model on an existing AnnData and use it`
->        - {% icon param-file %} *"Select an AnnData file from history"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering, marker genes with Wilcoxon test, annotation`
+>        - {% icon param-file %} *"Select an AnnData file from history"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering, marker genes with Wilcoxon test`
 >        - *"The column name in the .obs attribute of the training AnnData file that contains the cell type labels"*: `louvain`
 >    - *"Refine the predicted labels by running the majority voting classifier after over-clustering"*: `Yes`
 >    - *"Annotation mode"*: `Choose the cell type with the largest score/probability as the final prediction`
@@ -1974,14 +1974,22 @@ The automated approach uses CellTypist, a tool that applies pre-trained logistic
 > <hands-on-title>Automated cell type annotation with CellTypist (Cached model)</hands-on-title>
 >
 > 1. {% tool [CellTypist](toolshed.g2.bx.psu.edu/repos/iuc/celltypist/celltypist/1.7.1+galaxy0) %} with the following parameters:
->    - {% icon param-file %} *"Input AnnData file"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering, marker genes with Wilcoxon test, annotation`
+>    - {% icon param-file %} *"Input AnnData file"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering, marker genes with Wilcoxon test`
 >    - *"Select model from"*: `Cached`
 >      - *"Choose CellTypist model"*: `immune sub-populations combined from 20 tissues of 18 studies (v2)`
 >    - *"Refine the predicted labels by running the majority voting classifier after over-clustering"*: `Yes`
 >    - *"Annotation mode"*: `Choose the cell type with the largest score/probability as the final prediction`
 >    - *"Probability threshold"*: `0.5`
+>    - *"Generate a dotplot of the predicted cell types"*: `Yes`
+>      - *"Reference column in AnnData.obs for dotplot"*: `louvain`
+>      - *"Prediction label in AnnData.obs for dotplot"*: `predicted_labels`
+>      - *"Dotplot format"*: `png`
 >
-> 2. Rename the generated output `3k PBMC CellTypist annotated`
+> 2. Rename the generated output `3k PBMC CellTypist annotated with model`
+>
+> 3. Inspect the dotplot output
+>
+>    ![CellTypist cached model dotplot](../../images/scrna-scanpy-pbmc3k/celltypist_dotplot_cached.png "CellTypist label transfer dotplot using the cached immune model, showing predicted cell type labels against the Louvain clusters.")
 >
 {: .hands_on}
 
