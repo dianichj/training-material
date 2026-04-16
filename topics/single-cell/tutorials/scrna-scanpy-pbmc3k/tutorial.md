@@ -1362,8 +1362,8 @@ The cells in the same clusters should be co-localized in the UMAP coordinate plo
 > 1. {% tool [Scanpy plot](toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.11.5+galaxy0) %} with the following parameters:
 >    - {% icon param-file %} *"Annotated data matrix"*: `3k PBMC with only HVG, after scaling, PCA, KNN graph, UMAP, clustering`
 >    - *"Method used for plotting"*: `Embeddings: Scatter plot in UMAP basis, using 'pl.umap'`
->      - *"Keys for annotations of observations/cells or variables/genes"*: `louvain`
 >      - *"Make an interactive plot?"*: `Yes`
+>      - *"Keys for annotations of observations/cells or variables/genes"*: `louvain`
 >
 > 2. Rename the `vitessce.json` output to `Vitessce config - clusters`
 >
