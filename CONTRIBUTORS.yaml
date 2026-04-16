@@ -829,6 +829,7 @@ colineroyaux:
     elixir_node: fr
     affiliations:
       - pndb
+      - mnhn
       - gallantries
       - elixir-europe
 
@@ -3127,6 +3128,7 @@ nsoranzo:
     name: Nicola Soranzo
     matrix: 'nsoranzo:matrix.org'
     orcid: 0000-0003-3627-5340
+    bluesky: nsoranzo.bsky.social
     twitter: NicolaSoranzo
     joined: 2017-09
     elixir_node: uk
@@ -3134,8 +3136,14 @@ nsoranzo:
     fediverse_flavor: mastodon
     linkedin: nicola-soranzo-7884125
     affiliations:
+      - biofair
       - earlham
       - elixir-europe
+      - elixir-steers
+    location:
+      country: UK
+      lat: 52.62188
+      lon: 1.21899
 
 nturaga:
     name: Nitesh Turaga
@@ -3263,6 +3271,9 @@ PaulineSGN:
     joined: 2024-01
     email: pauline.seguineau@mnhn.fr
     orcid: 0009-0009-5969-8478
+    affiliations:
+      - pndb
+      - mnhn
 
 pauldg:
     name: Paul De Geest
@@ -4012,6 +4023,9 @@ TKlingstrom:
 TuturBaba:
     name: Arthur Barreau
     joined: 2026-03
+    affiliations:
+      - pndb
+      - sorbonneuniv
 
 tvedtees:
     name: Eric Tvedte
@@ -4203,13 +4217,15 @@ yvandenb:
 yvanlebras:
     name: Yvan Le Bras
     email: yvan.le-bras@mnhn.fr
-    twitter: Yvan2935
     matrix: 'yvanlebras:matrix.org'
     orcid: 0000-0002-8504-068X
     joined: 2017-09
     elixir_node: fr
     affiliations:
       - pndb
+      - mnhn
+      - dataterra
+      - moorev
       - gallantries
       - fairease
       - fnso2019
