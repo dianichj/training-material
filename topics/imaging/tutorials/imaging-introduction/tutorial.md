@@ -122,7 +122,7 @@ Not all tools can handle all image formats. Especially proprietary microscope im
 
 > <hands-on-title>Visual Inspection of TIFF Images</hands-on-title>
 >
-> 1. Click on the dataset to expand it, then click **Preview** {% icon galaxy-eye %} to view the image directly.
+> 1. Click on the dataset to expand it, then click **Preview** {% icon galaxy-eye %} to show the image for direct visual inspection.
 >
 {: .hands_on}
 
