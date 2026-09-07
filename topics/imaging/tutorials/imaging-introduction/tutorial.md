@@ -118,7 +118,7 @@ Now, we can extract metadata from an image.
 
 # Visual Inspection of TIFF Images
 
-Not all tools can handle all image formats. Especially proprietary microscope image formats should be converted to TIFF ([supported formats](https://docs.openmicroscopy.org/bio-formats/5.7.1/supported-formats.html)). TIFF images can now be previewed directly in Galaxy, without needing an external viewer.
+Not all tools can handle all image formats. Especially proprietary microscope image formats should be converted to TIFF ([supported formats](https://docs.openmicroscopy.org/bio-formats/5.7.1/supported-formats.html)). TIFF images can be visually inspected directly within Galaxy.
 
 > <hands-on-title>Visual Inspection of TIFF Images</hands-on-title>
 >
