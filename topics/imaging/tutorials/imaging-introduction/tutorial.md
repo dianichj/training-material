@@ -132,7 +132,7 @@ Your image should look something like this:
 
 > <question-title></question-title>
 >
-> Although the image now displays with reasonable contrast in Galaxy's preview, the underlying pixel values only cover a small part of the possible intensity range. How can you find this out, e.g. by checking the dataset details or histogram?
+> The image now displays in Galaxy as a grayscale image. The lowest intensity values are shown as black and the highest intensity values as white. But what range of intensity values do those correspond to?
 >
 > > <solution-title></solution-title>
 > > The original image is 16-bit and the intensity values of the image (33069 to 36863) only span about 6% of the range that can be represented using 16 bits (0 to 65535, where 0 corresponds to black and 65535 corresponds to white). Galaxy's built-in preview automatically rescales the *displayed* contrast so the image looks visible on screen, but the underlying pixel values in the dataset itself are unchanged and still concentrated in this narrow range. Tools and viewers that don't apply this automatic rescaling (as well as any downstream analysis) will still need the intensity histogram to be normalized explicitly.
