@@ -135,7 +135,7 @@ Your image should look something like this:
 > The image now displays in Galaxy as a grayscale image. The lowest intensity values are shown as black and the highest intensity values as white. But what range of intensity values do those correspond to?
 >
 > > <solution-title></solution-title>
-> > The original image is 16-bit and the intensity values of the image (33069 to 36863) only span about 6% of the range that can be represented using 16 bits (0 to 65535, where 0 corresponds to black and 65535 corresponds to white). Galaxy's built-in preview automatically rescales the *displayed* contrast so the image looks visible on screen, but the underlying pixel values in the dataset itself are unchanged and still concentrated in this narrow range. Tools and viewers that don't apply this automatic rescaling (as well as any downstream analysis) will still need the intensity histogram to be normalized explicitly.
+> > The original image is 16-bit and the intensity values of the image (33069 to 36863, where 33069 corresponds to black and 36863 corresponds to white) only span about 6% of the range that can be represented using 16 bits (0 to 65535). For direct visual inspection of the image, Galaxy automatically performs a _windowing operation_ on the intensity values of the image, so that intensity values that are not present in the image do not get encoded in the color values. This strongly enhances visual recognisability of the image (compared to encoding 0 as black and 65535 as white without using windowing for the intensity values). Other visualization tools might not apply windowing automatically and will require explicit normalization of the image intensity histogram.
 > {: .solution }
 {: .question}
 
