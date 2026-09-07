@@ -30,6 +30,7 @@ contributions:
     - thomaswollmann
     - shiltemann
     - kostrykin
+    - dianichj
   funding:
     - deNBI
     - elixir-europe
