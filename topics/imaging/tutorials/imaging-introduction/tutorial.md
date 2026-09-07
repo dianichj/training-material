@@ -31,6 +31,7 @@ contributions:
     - shiltemann
     - kostrykin
   funding:
+    - deNBI
     - elixir-europe
 tags:
   - Image segmentation
